@@ -51,14 +51,15 @@ cd transferred_packages
 ```
 Download the packages:
 
-`pip download -r requirements.txt`
-
-take your offline folder to offline computer and then
 ```
-python -m virtualenv myenv2
-cd myenv2
-source bin/activate
-cd -
+pip download -r requirements.txt
+cd ..
+tar -zcvf offline.tar.gz /transferred_packages/
+```
+
+take your offline folder to offline server and then
+```
+tar -xzvf offline.tar.gz
 cd offline
 pip install --no-index --find-links="./tranferred_packages" -r requirements.txt
 ```
