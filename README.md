@@ -42,17 +42,17 @@ source bin/activate
 pip install numpy
 ```
 after installing all the packages, you have to generate a requirements.txt so while your virtualenv is active, write
-`pip freeze > requirements.txt`
-open a new terminal and create another env like myenv2.
+
 ```
-python -m virtualenv myenv2
-cd myenv2
-source bin/activate
-cd -
-ls
+pip freeze > requirements.txt
+mkdir transferred_packages
+mv requirements.txt transferred_packages
+cd transferred_packages
 ```
-now you can go to your offline folder where your requirements.txt and tranferred_packages folder are in there. download the packages with following code and put all of them to tranferred_packages folder.
+Download the packages:
+
 `pip download -r requirements.txt`
+
 take your offline folder to offline computer and then
 ```
 python -m virtualenv myenv2
